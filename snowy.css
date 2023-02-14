@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background-color: rgb(25, 25, 43);
+}
+
+.container{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubble{
+    position: relative;
+    display:flex;
+}
+.bubble span{
+    position:relative;
+    width:30px;
+    height:30px;
+    background: rgb(31, 188, 196);
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px rgb(31, 188, 196),
+    0 0 50px rgb(31,188,196),
+    0 0 100px rgb(31,188,196);
+    animation:animate 15s linear infinite;
+    animation-duration:calc(130s/var(--i)) ;
+}
+.bubble span:nth-child(even){
+background: rgb(246, 114, 246);
+box-shadow: 0 0 0 5px rgb(246, 114, 246),
+0 0 50px rgb(238, 206, 211),
+0 0 100px rgb(245, 187, 197);
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(100vh) scale(0); 
+    }
+    50% {
+        animation-timing-function: cubic-bezier(1, 0.0, 1, 0.5);
+    }
+    100%{
+        transform: translateY(-10vh) scale(0.5);
+    }
+}
